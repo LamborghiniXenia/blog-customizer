@@ -15,7 +15,7 @@ import {
 } from 'src/constants/articleProps';
 import { clsx } from 'clsx';
 import React, { useState, useRef } from 'react';
-import { useOutsideClickClose } from 'src/ui/select/hooks/useOutsideClickClose';
+import { useClose } from 'src/hooks/useClose';
 
 import styles from './ArticleParamsForm.module.scss';
 
@@ -41,7 +41,7 @@ export const ArticleParamsForm = ({
 	const [articleParamsFormState, setArticleParamsFormState] =
 		useState(defaultArticleState);
 
-	const asideRef = useRef<HTMLDivElement>(null);
+	const asideRef = useRef<HTMLElement>(null);
 
 	const handleFontFamilyOption = (selectedOption: OptionType) => {
 		setArticleParamsFormState((prevState) => ({
@@ -89,10 +89,10 @@ export const ArticleParamsForm = ({
 		setActive(false);
 	};
 
-	useOutsideClickClose({
+	useClose({
 		isOpen: active,
-		rootRef: asideRef,
-		onChange: setActive,
+		onClose: () => setActive(false),
+		rootRef: asideRef
 	});
 
 	return (
