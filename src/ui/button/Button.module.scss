@@ -10,22 +10,22 @@
 	cursor: pointer;
 }
 
-.button_apply {
+.buttonApply {
 	background-color: #ffc802;
 }
 
-.button_clear {
+.buttonClear {
 	background-color: white;
 }
 
-.button_apply:hover {
+.buttonApply:hover {
 	background-color: #ffedab;
 }
 
-.button_clear:hover {
+.buttonClear:hover {
 	background-color: #000000;
 }
 
-.button_clear:hover div {
+.buttonClear:hover div {
 	color: white;
 }
